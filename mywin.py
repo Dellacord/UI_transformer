@@ -7,8 +7,14 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import (QMainWindow, QTextEdit, QAction, QFileDialog, QApplication)
+
+
 
 class Ui_MainWindow(object):
+
+
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(480, 300)
@@ -28,12 +34,15 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.label.setFont(font)
         self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget) #Кнопка выбора Python.exe
         self.pushButton.setGeometry(QtCore.QRect(280, 20, 101, 31))
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("folder.png"), QtGui.QIcon.Active, QtGui.QIcon.On)
         self.pushButton.setIcon(icon1)
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.showDialog())
+
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(20, 80, 221, 31))
         font = QtGui.QFont()
@@ -105,4 +114,8 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Save to:"))
         self.pushButton_3.setText(_translate("MainWindow", "View"))
         self.pushButton_4.setText(_translate("MainWindow", "Transforn"))
+
+    def showDialog(self):
+        wb_patch = QtWidgets.QFileDialog.getOpenFileName()[0]
+        print(wb_patch)
 
