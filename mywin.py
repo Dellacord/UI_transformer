@@ -41,7 +41,6 @@ class Ui_MainWindow(object):
         icon1.addPixmap(QtGui.QPixmap("folder.png"), QtGui.QIcon.Active, QtGui.QIcon.On)
         self.pushButton.setIcon(icon1)
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.showDialog())
 
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(20, 80, 221, 31))
@@ -114,8 +113,4 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Save to:"))
         self.pushButton_3.setText(_translate("MainWindow", "View"))
         self.pushButton_4.setText(_translate("MainWindow", "Transforn"))
-
-    def showDialog(self):
-        wb_patch = QtWidgets.QFileDialog.getOpenFileName()[0]
-        print(wb_patch)
 
