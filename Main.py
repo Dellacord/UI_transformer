@@ -22,12 +22,13 @@ def py_file():
     ''' Вызов проводника для определения пути к Python.exe
 sys.executable - полный путь до Python.exe'''
 
-    py_path = QtWidgets.QFileDialog.getOpenFileName()[0]
+    py_path = QtWidgets.QFileDialog.getOpenFileName()[0]#Выбор файла
 
     serch_py = re.search(r'test.py', str (py_path))# В случае отсутствия искомого, возвращает  None
 
     if serch_py != None:
         ui.label_4.setPixmap(QtGui.QPixmap("check.png"))
+        return serch_py
     else:
         ui.label_4.setPixmap(QtGui.QPixmap("cross.png"))
 
@@ -40,11 +41,35 @@ def ui_file():
 
     if serch_ui != None:
         ui.label_5.setPixmap(QtGui.QPixmap("check.png"))
+        return serch_ui
     else:
         ui.label_5.setPixmap(QtGui.QPixmap("cross.png"))
 
-ui.pushButton.clicked.connect(py_file)
-ui.pushButton_2.clicked.connect(ui_file)
+def py_dir():
+    ''' Выбор папки для .py файла'''
+
+    dialog = QFileDialog()
+    foo_dir = dialog.getExistingDirectory()#Выбор папки
+
+    if len(foo_dir) > 0:
+        ui.label_6.setPixmap(QtGui.QPixmap("check.png"))
+        return foo_dir
+    else:
+        ui.label_6.setPixmap(QtGui.QPixmap("cross.png"))
+
+
+#def tran(pf,uf,dr):
+    #print(pf,uf,dr)
+
+a = ''
+b = ''
+c = ''
+
+a = ui.pushButton.clicked.connect(py_file)
+b = ui.pushButton_2.clicked.connect(ui_file)
+c = ui.pushButton_3.clicked.connect(py_dir)
+#ui.pushButton_4.clicked.connect(tran)
+
 
 #Запуск программы
 sys.exit(app.exec_())

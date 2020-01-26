@@ -1,43 +1,39 @@
-import sys
-from PyQt5.QtWidgets import (QMainWindow, QTextEdit, QAction, QFileDialog, QApplication)
-from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QFileDialog, QDialog
+#from definitions import ROOT_DIR
+from PyQt5 import QtCore
 
 
-class Example(QMainWindow):
+def FileDialog(directory='', forOpen=True, fmt='', isFolder=False):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    options |= QFileDialog.DontUseCustomDirectoryIcons
+    dialog = QFileDialog()
+    dialog.setOptions(options)
 
-    def __init__(self):
-        super().__init__()
-        self.initUI()
+    dialog.setFilter(dialog.filter() | QtCore.QDir.Hidden)
 
-    def initUI(self):
-        self.textEdit = QTextEdit()
-        self.setCentralWidget(self.textEdit)
-        self.statusBar()
+    # ARE WE TALKING ABOUT FILES OR FOLDERS
+    if isFolder:
+        dialog.setFileMode(QFileDialog.DirectoryOnly)
+    else:
+        dialog.setFileMode(QFileDialog.AnyFile)
+    # OPENING OR SAVING
+    dialog.setAcceptMode(QFileDialog.AcceptOpen) if forOpen else dialog.setAcceptMode(QFileDialog.AcceptSave)
 
-        openFile = QAction(QIcon('open.png'), 'Open', self)
-        openFile.setShortcut('Ctrl+O')
-        openFile.setStatusTip('Open new File')
-        openFile.triggered.connect(self.showDialog)
+    # SET FORMAT, IF SPECIFIED
+    #if fmt != '' and isFolder is False:
+        #dialog.setDefaultSuffix(fmt)
+        #dialog.setNameFilters([f'{fmt} (*.{fmt})'])
 
-        menubar = self.menuBar()
-        fileMenu = menubar.addMenu('&File')
-        fileMenu.addAction(openFile)
-
-        self.setGeometry(300, 300, 350, 300)
-        self.setWindowTitle('File dialog')
-        self.show()
-
-    def showDialog(self):
-        fname = QFileDialog.getOpenFileName(self, 'Open file', '/home')
-
-        f = open(fname, 'r')
-
-        with f:
-            data = f.read()
-            self.textEdit.setText(data)
+    # SET THE STARTING DIRECTORY
+    if directory != '':
+        dialog.setDirectory(str(directory))
+    else:
+        dialog.setDirectory(str(ROOT_DIR))
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
+    if dialog.exec_() == QDialog.Accepted:
+        path = dialog.selectedFiles()[0]  # returns a list
+        return path
+    else:
+        return ''
