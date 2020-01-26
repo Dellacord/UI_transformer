@@ -35,13 +35,6 @@ class Ui_MainWindow(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
 
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget) #Кнопка выбора Python.exe
-        self.pushButton.setGeometry(QtCore.QRect(280, 20, 101, 31))
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("folder.png"), QtGui.QIcon.Active, QtGui.QIcon.On)
-        self.pushButton.setIcon(icon1)
-        self.pushButton.setObjectName("pushButton")
-
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(20, 80, 221, 31))
         font = QtGui.QFont()
@@ -107,7 +100,6 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "UI Transformer"))
         self.label.setText(_translate("MainWindow", "Path to Python.exe file:"))
-        self.pushButton.setText(_translate("MainWindow", "View"))
         self.label_2.setText(_translate("MainWindow", "Path to .ui file:"))
         self.pushButton_2.setText(_translate("MainWindow", "View"))
         self.label_3.setText(_translate("MainWindow", "Save to:"))

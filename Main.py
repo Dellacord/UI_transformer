@@ -18,58 +18,52 @@ MainWindow.show()
 
 ''' Текст программы '''
 
-def py_file():
-    ''' Вызов проводника для определения пути к Python.exe
-sys.executable - полный путь до Python.exe'''
+class transform():
 
-    py_path = QtWidgets.QFileDialog.getOpenFileName()[0]#Выбор файла
+    ui_path = ''
+    foo_dir = ''
+    py_path = sys.executable  # команда для вывода пути к python.exe
 
-    serch_py = re.search(r'test.py', str (py_path))# В случае отсутствия искомого, возвращает  None
+    serch_py = re.search(r'python.exe', str(py_path))  # В случае отсутствия искомого, возвращает  None
 
     if serch_py != None:
         ui.label_4.setPixmap(QtGui.QPixmap("check.png"))
-        return serch_py
     else:
         ui.label_4.setPixmap(QtGui.QPixmap("cross.png"))
-
-def ui_file():
-    ''' Вызов проводника для определения пути к *.ui'''
-
-    ui_path = QtWidgets.QFileDialog.getOpenFileName()[0]
-
-    serch_ui = re.search(r'.ui', str (ui_path))# В случае отсутствия искомого, возвращает  None
-
-    if serch_ui != None:
-        ui.label_5.setPixmap(QtGui.QPixmap("check.png"))
-        return serch_ui
-    else:
-        ui.label_5.setPixmap(QtGui.QPixmap("cross.png"))
-
-def py_dir():
-    ''' Выбор папки для .py файла'''
-
-    dialog = QFileDialog()
-    foo_dir = dialog.getExistingDirectory()#Выбор папки
-
-    if len(foo_dir) > 0:
-        ui.label_6.setPixmap(QtGui.QPixmap("check.png"))
-        return foo_dir
-    else:
-        ui.label_6.setPixmap(QtGui.QPixmap("cross.png"))
+        ui.label.setText("Python.exe file not found:")
 
 
-#def tran(pf,uf,dr):
-    #print(pf,uf,dr)
 
-a = ''
-b = ''
-c = ''
 
-a = ui.pushButton.clicked.connect(py_file)
-b = ui.pushButton_2.clicked.connect(ui_file)
-c = ui.pushButton_3.clicked.connect(py_dir)
-#ui.pushButton_4.clicked.connect(tran)
+    def ui_file(self):
+        ''' Вызов проводника для определения пути к *.ui'''
 
+        transform.ui_path = QtWidgets.QFileDialog.getOpenFileName()[0]
+
+        serch_ui = re.search(r'.ui', str(transform.ui_path))  # В случае отсутствия искомого, возвращает  None
+
+        if serch_ui != None:
+            ui.label_5.setPixmap(QtGui.QPixmap("check.png"))
+        else:
+            ui.label_5.setPixmap(QtGui.QPixmap("cross.png"))
+
+    def py_dir(self):
+        ''' Выбор папки для .py файла'''
+
+        transform.foo_dir = QFileDialog.getExistingDirectory()  # Выбор папки
+
+        if len(transform.foo_dir) > 0:
+            ui.label_6.setPixmap(QtGui.QPixmap("check.png"))
+        else:
+            ui.label_6.setPixmap(QtGui.QPixmap("cross.png"))
+
+    def tran():
+        print(transform.py_path, transform.ui_path, transform.foo_dir)
+
+sh = transform
+ui.pushButton_2.clicked.connect(sh.ui_file)
+ui.pushButton_3.clicked.connect(sh.py_dir)
+ui.pushButton_4.clicked.connect(sh.tran)
 
 #Запуск программы
 sys.exit(app.exec_())
