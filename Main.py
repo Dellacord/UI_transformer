@@ -6,6 +6,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import (QMainWindow, QTextEdit, QAction, QFileDialog, QApplication)
 from mywin import Ui_MainWindow
 import re
+import os
 
 #Создаем аппликацию
 app = QtWidgets.QApplication(sys.argv)
@@ -20,27 +21,28 @@ MainWindow.show()
 
 class transform():
 
-    ui_path = ''
+    ui_fl = ''
     foo_dir = ''
-    py_path = sys.executable  # команда для вывода пути к python.exe
+    py_path = ''
 
-    serch_py = re.search(r'python.exe', str(py_path))  # В случае отсутствия искомого, возвращает  None
+    dir = sys.exec_prefix #Рабочая папка Phython
+    fil = []
 
-    if serch_py != None:
-        ui.label_4.setPixmap(QtGui.QPixmap("check.png"))
-    else:
-        ui.label_4.setPixmap(QtGui.QPixmap("cross.png"))
-        ui.label.setText("Python.exe file not found:")
+    for i in os.walk(dir): # Рекурсивный просмотр папки
+        fil.append(i)
 
-
-
+    for address, dirs, files in fil: # Перебор всех файлов и папок
+        for file in files:
+            if file == 'pyuic5.bat':
+                ui.label_4.setPixmap(QtGui.QPixmap("check.png"))
+                py_path = str(address + '\\' + file)
+                ui.label.setText("PYQT5 module downloaded")
 
     def ui_file(self):
         ''' Вызов проводника для определения пути к *.ui'''
 
-        transform.ui_path = QtWidgets.QFileDialog.getOpenFileName()[0]
-
-        serch_ui = re.search(r'.ui', str(transform.ui_path))  # В случае отсутствия искомого, возвращает  None
+        transform.ui_fl = QtWidgets.QFileDialog.getOpenFileName()[0]
+        serch_ui = re.search(r'.ui', str(transform.ui_fl))  # В случае отсутствия искомого, возвращает  None
 
         if serch_ui != None:
             ui.label_5.setPixmap(QtGui.QPixmap("check.png"))
@@ -57,8 +59,13 @@ class transform():
         else:
             ui.label_6.setPixmap(QtGui.QPixmap("cross.png"))
 
-    def tran():
-        print(transform.py_path, transform.ui_path, transform.foo_dir)
+    def tran(self):#создает фаил py в дериктории программы
+        '''  os.system('command') - выполнение команды в консоли CMD
+         move c:\test\file1.txt D:\folder2\file2.txt -
+         перенести файл file1.txt из каталога test диска C: в каталог folder2 диска D: под именем file2.txt'''
+        app = transform.py_path + ' ' + str(transform.ui_fl) + ' -o 21111111.py'
+        os.system(app)
+        print(app)
 
 sh = transform
 ui.pushButton_2.clicked.connect(sh.ui_file)

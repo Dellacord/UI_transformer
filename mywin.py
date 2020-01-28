@@ -29,14 +29,14 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 20, 221, 31))
+        self.label.setGeometry(QtCore.QRect(20, 20, 250, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label.setFont(font)
         self.label.setObjectName("label")
 
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(20, 80, 221, 31))
+        self.label_2.setGeometry(QtCore.QRect(20, 80, 250, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label_2.setFont(font)
@@ -99,7 +99,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "UI Transformer"))
-        self.label.setText(_translate("MainWindow", "Path to Python.exe file:"))
+        self.label.setText(_translate("MainWindow", "PYQT5 module not found"))
         self.label_2.setText(_translate("MainWindow", "Path to .ui file:"))
         self.pushButton_2.setText(_translate("MainWindow", "View"))
         self.label_3.setText(_translate("MainWindow", "Save to:"))
