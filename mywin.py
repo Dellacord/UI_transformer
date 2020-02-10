@@ -1,20 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Main_window.ui'
-#
-# Created by: PyQt5 UI code generator 5.6
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import (QMainWindow, QTextEdit, QAction, QFileDialog, QApplication)
-
-
 
 class Ui_MainWindow(object):
-
-
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(480, 300)
@@ -29,23 +17,22 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 20, 250, 31))
+        self.label.setGeometry(QtCore.QRect(20, 20, 290, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label.setFont(font)
         self.label.setObjectName("label")
-
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(20, 80, 250, 31))
+        self.label_2.setGeometry(QtCore.QRect(20, 80, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(280, 80, 101, 31))
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("folder.png"), QtGui.QIcon.Active, QtGui.QIcon.Off)
-        self.pushButton_2.setIcon(icon2)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("folder.png"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        self.pushButton_2.setIcon(icon1)
         self.pushButton_2.setObjectName("pushButton_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(20, 140, 221, 31))
@@ -55,13 +42,13 @@ class Ui_MainWindow(object):
         self.label_3.setObjectName("label_3")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(280, 140, 101, 31))
-        self.pushButton_3.setIcon(icon2)
+        self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.setGeometry(QtCore.QRect(90, 200, 221, 31))
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("forth.png"), QtGui.QIcon.Active, QtGui.QIcon.Off)
-        self.pushButton_4.setIcon(icon3)
+        self.pushButton_4.setGeometry(QtCore.QRect(160, 240, 221, 31))
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("forth.png"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        self.pushButton_4.setIcon(icon2)
         self.pushButton_4.setObjectName("pushButton_4")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(410, 20, 30, 30))
@@ -84,11 +71,29 @@ class Ui_MainWindow(object):
         self.label_6.setPixmap(QtGui.QPixmap("cross.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(410, 240, 30, 30))
+        self.label_7.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.label_7.setText("")
+        self.label_7.setPixmap(QtGui.QPixmap("cross.png"))
+        self.label_7.setScaledContents(True)
+        self.label_7.setObjectName("label_7")
+        self.label_8 = QtWidgets.QLabel(self.centralwidget)
+        self.label_8.setGeometry(QtCore.QRect(20, 200, 165, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_8.setFont(font)
+        self.label_8.setObjectName("label_8")
+        self.label_9 = QtWidgets.QLabel(self.centralwidget)
+        self.label_9.setGeometry(QtCore.QRect(350, 200, 51, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_9.setFont(font)
+        self.label_9.setObjectName("label_9")
+        self.textEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.textEdit.setGeometry(QtCore.QRect(200, 200, 150, 31))
+        self.textEdit.setObjectName("textEdit")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 480, 27))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -105,4 +110,6 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Save to:"))
         self.pushButton_3.setText(_translate("MainWindow", "View"))
         self.pushButton_4.setText(_translate("MainWindow", "Transforn"))
+        self.label_8.setText(_translate("MainWindow", "Name of PY file:"))
+        self.label_9.setText(_translate("MainWindow", ".py"))
 
