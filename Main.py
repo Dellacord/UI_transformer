@@ -19,6 +19,14 @@ ui.setupUi(MainWindow)
 MainWindow.show()
 
 ''' Текст программы '''
+def comp_win():
+    app1 = QtWidgets.QApplication(sys.argv)
+    CompWindow = QtWidgets.QMainWindow()
+    cp_ui = cp_win.Ui_MainWindow()
+    cp_ui.setupUi(CompWindow)
+    CompWindow.show()
+    sys.exit(app1.exec_())
+
 
 class transform():
 
@@ -76,6 +84,8 @@ class transform():
             app_move_to = transform.foo_dir
             shutil.move(app_move_from, app_move_to) # перемещение файла
             ui.label_7.setPixmap(QtGui.QPixmap("check.png"))
+
+
 
 sh = transform
 ui.pushButton_2.clicked.connect(sh.ui_file)

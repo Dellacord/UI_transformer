@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba92df7a-e76f-4774-bdfa-af33f71b213b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/UI_transformer.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mywin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mywin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read_me" beforeDir="false" afterPath="$PROJECT_DIR$/read_me" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +202,14 @@
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
     <state x="-1697" y="67" width="1089" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581148951619" />
+    <state x="-1390" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581367525284">
+      <screen x="-1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="-1390" y="215" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581367525284" />
+    <state x="-1421" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581374841490">
+      <screen x="-1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="-1421" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581374841490" />
     <state x="-1424" y="26" key="#test" timestamp="1581147453663">
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
@@ -220,22 +222,22 @@
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
     <state x="-1371" y="167" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581148890529" />
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1581367118288">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1581374869316">
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581367118288" />
-    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1581367118288">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581374869316" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1581374869316">
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581367118288" />
-    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1581367118288">
+    <state width="1515" height="208" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581374869316" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1581374869315">
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581367118288" />
-    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1581367118288">
+    <state width="1515" height="208" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581374869315" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1581374869316">
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581367118288" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1581374869316" />
     <state x="-1643" y="54" key="SettingsEditor" timestamp="1581148930022">
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
